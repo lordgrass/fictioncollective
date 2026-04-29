@@ -30,33 +30,34 @@ if enable_chat_greeter then
     end
 	)
 end
-
 -- Glowing nodes
 if enable_glowing_nodes then
-    local function creative_only_dig(pos, node, digger)
-		-- Stops survival mode players from breaking the node.
-        if digger and digger:is_player() then
-            local name = digger:get_player_name()
-            if minetest.is_creative_enabled(name) then
-                return minetest.node_dig(pos, node, digger)
-            end
+    local function is_player_creative(player)
+        if not player or not player:is_player() then
+            return false
         end
+        local name = player:get_player_name()
+    -- Works for both singleplayer and per-player creative setting
+        return minetest.is_creative_enabled(name)
     end
-	--Registers the nodes
 	minetest.register_node("utilities:glowing_stone", {
 		description = "Stone | Light Level 14",
         tiles = {"default_stone.png"},
         is_ground_content = false,
         light_source = 14,
-        groups = {enas_utilities = 1},
-		on_dig = creative_only_dig,
+        groups = {cracky = 1, oddly_breakable_by_hand = 1},
+        can_dig = function(pos, player)
+            return is_player_creative(player)
+        end,
     })
 	minetest.register_node("utilities:glowing_dirt", {
 	    description = "Dirt | Light Level 14",
 		tiles = {"default_dirt.png"},
 		is_ground_content = false,
 		light_source = 14,
-		groups = {enas_utilities = 1},
-		on_dig = creative_only_dig,
+		groups = {cracky = 1, oddly_breakable_by_hand = 1},
+        can_dig = function(pos, player)
+            return is_player_creative(player)
+        end,
 	})
 end
