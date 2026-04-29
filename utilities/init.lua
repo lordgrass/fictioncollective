@@ -40,7 +40,7 @@ if enable_glowing_nodes then
     -- Works for both singleplayer and per-player creative setting
         return minetest.is_creative_enabled(name)
     end
-	minetest.register_node("utilities:glowing_stone", {
+	minetest.register_node("utilities:glowing_stone_max_lv", {
 		description = "Stone | Light Level 14",
         tiles = {"default_stone.png"},
         is_ground_content = false,
@@ -50,11 +50,50 @@ if enable_glowing_nodes then
             return is_player_creative(player)
         end,
     })
-	minetest.register_node("utilities:glowing_dirt", {
+	minetest.register_node("utilities:glowing_dirt_max_lv", {
 	    description = "Dirt | Light Level 14",
 		tiles = {"default_dirt.png"},
 		is_ground_content = false,
 		light_source = 14,
+		groups = {cracky = 1, oddly_breakable_by_hand = 1},
+        can_dig = function(pos, player)
+            return is_player_creative(player)
+        end,
+	})
+    	minetest.register_node("utilities:glowing_stone_lv_7", {
+		description = "Stone | Light Level 7",
+        tiles = {"default_stone.png"},
+        is_ground_content = false,
+        light_source = 7,
+        groups = {cracky = 1, oddly_breakable_by_hand = 1},
+        can_dig = function(pos, player)
+            return is_player_creative(player)
+        end,
+    })
+	minetest.register_node("utilities:glowing_dirt_lv_7", {
+	    description = "Dirt | Light Level 7",
+		tiles = {"default_dirt.png"},
+		is_ground_content = false,
+		light_source = 7,
+		groups = {cracky = 1, oddly_breakable_by_hand = 1},
+        can_dig = function(pos, player)
+            return is_player_creative(player)
+        end,
+	})	minetest.register_node("utilities:glowing_stone_lv_1", {
+		description = "Stone | Light Level 1",
+        tiles = {"default_stone.png"},
+        is_ground_content = false,
+        light_source = 1,
+        groups = {cracky = 1, oddly_breakable_by_hand = 1},
+        can_dig = function(pos, player)
+            return is_player_creative(player)
+        end,
+    })
+	minetest.register_node("utilities:glowing_dirt_lv_1", {
+	    description = "Dirt | Light Level 1",
+		tiles = {"default_dirt.png"},
+		is_ground_content = false,
+		light_source = 1,
 		groups = {cracky = 1, oddly_breakable_by_hand = 1},
         can_dig = function(pos, player)
             return is_player_creative(player)
