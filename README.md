@@ -23,4 +23,4 @@ Utilities Mod
 3. Cutscene engine test.
 4. Custom NPC Spawn test.
 5. Custom Node place & break test.
-6. Code Cleanup for release.
+6. Code Cleanup for alpha release.
