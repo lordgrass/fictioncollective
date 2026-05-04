@@ -10,24 +10,39 @@
     a {color: white; text-decoration: none;}
     a:hover {color: #00ff00; text-decoration-line: underline;
     text-decoration-color: #00ff00;}
+    @keyframes menuAnimationActive {
+    0% {color: white;}
+    50% {color: #00ff00;}
+    100% {color: white;}
+    }
+    .active {animation: menuAnimationActive 2s ease-in-out infinite;}
 </style>
 
 <body style="margin: 0; background-color: gray;">
     <div style="background-color: black; margin: 0 auto;">
     <header style="padding: 1%;">
-        <img style="display: block; margin: 0 auto; width: 712px;" src="title.png" alt="Logo/Title"></img>
+        <img style="display: block; margin: 0 auto;" src="title.png" alt="Logo/Title"></img>
     </header>
-
     </div>
-    <div style="background: linear-gradient(to bottom, black, red, gray);">
-        <div style="margin: 0 auto; width: 834px; text-align: center;">
-            <a style="display: inline-block; padding: 13px;" href=""><h2>Home</h2></a>
-            <a style="display: inline-block; padding: 13px;" href=""><h2>Discord</h2></a>
-            <a style="display: inline-block; padding: 13px;" href=""><h2>Blog</h2></a>
+    <div style="background: linear-gradient(to bottom, black, blue, gray);">
+        <div style="margin: 0 auto; text-align: center;">
+            <a class="active" style="display: inline-block; padding: 13px;" href="index.htm"><h2>Home</h2></a>
+            <!--<a style="display: inline-block; padding: 13px;" href=""><h2>About</h2></a>-->
+            <a style="display: inline-block; padding: 13px;" href="https://enadasa.vivaldi.net"><h2>Blog</h2></a>
+            <a style="display: inline-block; padding: 13px;" href=""><h2>Database</h2></a>
+            <a style="display: inline-block; padding: 13px;" href="https://discord.gg/auf3P2n"><h2>Discord</h2></a>
         </div>
     </div>
-    <div style="margin: 0 auto; width: 832px; height: 712px; background-color: black;">
-
+    <div style="margin: 0 auto; width: 832px;">
+        <img style="display: block; margin: 0 auto; padding: 1%;" src="about.png" alt="Logo/Title"></img>
+        <div style="color: white;">
+            <h2 style="padding: 2%; text-align: center; border-bottom: 3px solid white; border-top: 3px solid white; border-radius: 15px;">Beginnings</h2>
+            <h3>
+                The Fiction Cabal is a community of people interested in fictional universes,<br>
+                no matter the franchise. We started out on discord as a Star Wars themed discord
+                server and now we do much, much more!
+            </h3>
+        </div>
     </div>
 </body>
 
